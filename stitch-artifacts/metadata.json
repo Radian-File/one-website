@@ -1,0 +1,9 @@
+{
+  "projectId": "14267143271344118488",
+  "sessionId": "13086195049336463114",
+  "screenName": "projects/14267143271344118488/screens/ca9a43c194a54cd19b1d310a57652549",
+  "title": "Stitch Project Landing Page",
+  "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA1ZjBlNzM3NTUzNTQ0YzU4OWYxNjJhMTA4NDgwZTcwEgsSBxCX3u_l1wYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNDI2NzE0MzI3MTM0NDExODQ4OA&filename=&opi=96797242",
+  "screenshotUrl": "https://lh3.googleusercontent.com/aida/ADBb0uju3WtKDOwcEIx25WXdHdfAIcPa3S6nHzgNv122NdWYPL5qXHElcqfe4PxUwmgTmDQ6kzpl-0fkwKgvc5jzcrnfhBkShYuHvKfpXVu21FPkI-mcT-bqAZec0bEuAVEm8zKlb1Jok9rEiz6qwSP1csDDX5jPuunkhpNPGcNjNo9QyxK-s8DyzNe87yg8wTzgLtwG6cBW-Z92Txs9UkJjpojfZnyVW479LB6i6CLkXaqNR0OwP-2g7txfkg8",
+  "prompt": "Design a modern SaaS landing page for a product named \"Stitch Project\". \nRequirements:\n- Desktop web layout, clean and professional\n- Sections: sticky navbar, hero, key features (3 cards), process steps (3), CTA banner, footer\n- Color style: indigo primary with neutral background\n- Include Indonesian copy text\n- Accessible contrast and clear hierarchy\n- Output should be implementation-friendly HTML structure"
+}

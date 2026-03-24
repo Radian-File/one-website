@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Project | Sederhanakan Kompleksitas Proyek Anda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e0e3e5",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-fixed-dim": "#c3c0ff",
+              "tertiary-fixed-dim": "#ffb695",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "on-secondary-fixed": "#140f54",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#413f82",
+              "primary": "#3525cd",
+              "outline": "#777587",
+              "on-background": "#191c1e",
+              "surface-tint": "#4d44e3",
+              "inverse-surface": "#2d3133",
+              "tertiary": "#7e3000",
+              "primary-container": "#4f46e5",
+              "background": "#f7f9fb",
+              "tertiary-fixed": "#ffdbcc",
+              "secondary-fixed": "#e2dfff",
+              "outline-variant": "#c7c4d8",
+              "secondary": "#58579b",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#ffd2be",
+              "on-surface": "#191c1e",
+              "surface-bright": "#f7f9fb",
+              "secondary-container": "#b6b4ff",
+              "inverse-primary": "#c3c0ff",
+              "surface": "#f7f9fb",
+              "on-primary-container": "#dad7ff",
+              "on-tertiary-fixed": "#351000",
+              "surface-container-high": "#e6e8ea",
+              "on-primary-fixed-variant": "#3323cc",
+              "surface-container": "#eceef0",
+              "on-primary-fixed": "#0f0069",
+              "tertiary-container": "#a44100",
+              "on-surface-variant": "#464555",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#e2dfff",
+              "on-secondary-container": "#454386",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#c3c0ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-thread {
+            width: 2px;
+            height: 48px;
+            background-color: #3525cd;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #3525cd 0%, #4f46e5 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white font-headline">Stitch Project</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-manrope font-semibold text-sm tracking-tight text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="#">Fitur</a>
+<a class="font-manrope font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-colors" href="#">Proses</a>
+<a class="font-manrope font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-colors" href="#">Solusi</a>
+<a class="font-manrope font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-600 transition-colors" href="#">Harga</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-md font-manrope font-semibold text-sm hover:opacity-80 transition-all duration-300 Active: scale-95 transition-transform">
+                Mulai Gratis
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden px-6 lg:px-12 py-24">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<div class="signature-thread mb-6"></div>
+<span class="font-label text-xs font-bold tracking-[0.05em] text-primary uppercase mb-4 block">KOLABORASI TANPA BATAS</span>
+<h1 class="font-headline text-[3.5rem] leading-[1.1] font-extrabold tracking-tight text-on-surface mb-6">
+                        Sederhanakan Kompleksitas Proyek Anda.
+                    </h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-xl mb-10">
+                        Stitch Project menyatukan tim, tugas, dan tenggat waktu dalam satu alur kerja yang mulus. Didesain untuk presisi, dibangun untuk skala besar.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="editorial-gradient text-on-primary px-8 py-4 rounded-md font-semibold text-base shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                            Mulai Gratis Sekarang
+                        </button>
+<button class="border border-outline-variant/15 text-primary px-8 py-4 rounded-md font-semibold text-base hover:bg-surface-container-high transition-all duration-300">
+                            Jelajahi Solusi Kami
+                        </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -inset-10 editorial-gradient opacity-10 blur-[100px] rounded-full"></div>
+<img alt="Dashboard Project Management" class="relative z-10 rounded-xl shadow-2xl translate-x-12 scale-110" data-alt="Modern clean software dashboard interface showing project analytics, timelines, and team collaboration tools in a high-end minimalist design style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqg0iGS95VuMCyIUmf0B7-KynX7peBFLf9AfEcdto2fglkZ0b7zuM4w5zKBbTZFfqkmhqvXnJrjczPDSYQIDgDCMH19DLV149cMwICRySh6vRIU_jTymZ54Tsr8g14IqIc1FCpvafYjQlTdXCBbNZgfy8eU4p6jqO2YZrEFqWkzcsGLQVxgJsSxp_YsmTpEmBn4JB3mgYNLrsDe1Y_iJ7aaQLG4wQExg1OTmTvMZc_aAOYPWh6o2-X41aEHX1INc0xLKguKAC_ffyr"/>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-32 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="font-label text-xs font-bold tracking-[0.05em] text-primary uppercase mb-3 block">FITUR UTAMA</span>
+<h2 class="font-headline text-4xl font-bold text-on-surface">Solusi Tailor-Made untuk Tim Anda</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-[0_32px_64px_-12px_rgba(53,37,205,0.04)] transition-all duration-500 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-white" data-icon="bolt" data-weight="fill">bolt</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-4">Integrasi Cepat</h3>
+<p class="text-on-surface-variant leading-relaxed">Hubungkan ribuan aplikasi yang Anda gunakan setiap hari dalam hitungan menit tanpa kode.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-[0_32px_64px_-12px_rgba(53,37,205,0.04)] transition-all duration-500 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-white" data-icon="analytics" data-weight="fill">analytics</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-4">Analitik Real-time</h3>
+<p class="text-on-surface-variant leading-relaxed">Dapatkan wawasan mendalam tentang performa proyek dengan visualisasi data yang presisi.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:shadow-[0_32px_64px_-12px_rgba(53,37,205,0.04)] transition-all duration-500 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-white" data-icon="shield_lock" data-weight="fill">shield_lock</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-4">Keamanan Data</h3>
+<p class="text-on-surface-variant leading-relaxed">Perlindungan tingkat enterprise untuk memastikan semua aset intelektual Anda tetap aman dan privat.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Steps -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-20">
+<div class="lg:w-1/3">
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-6 leading-tight">Proses yang Sederhana, Hasil yang Luar Biasa.</h2>
+<p class="text-on-surface-variant leading-relaxed">Kami menghilangkan hambatan teknis sehingga Anda dapat fokus pada apa yang benar-benar penting bagi bisnis Anda.</p>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Step 1 -->
+<div class="relative">
+<span class="text-[6rem] font-headline font-extrabold text-surface-container-high leading-none absolute -top-8 -left-4 -z-10">01</span>
+<div class="pt-8">
+<h4 class="font-headline text-xl font-bold mb-3">Hubungkan</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Impor data dan tim Anda dari platform manapun dengan satu klik mudah.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="text-[6rem] font-headline font-extrabold text-surface-container-high leading-none absolute -top-8 -left-4 -z-10">02</span>
+<div class="pt-8">
+<h4 class="font-headline text-xl font-bold mb-3">Otomatisasikan</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Biarkan kecerdasan buatan kami menangani tugas repetitif dan alur kerja rutin.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="text-[6rem] font-headline font-extrabold text-surface-container-high leading-none absolute -top-8 -left-4 -z-10">03</span>
+<div class="pt-8">
+<h4 class="font-headline text-xl font-bold mb-3">Pantau</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Lihat kemajuan secara langsung melalui dashboard pusat yang intuitif.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="editorial-gradient rounded-xl p-12 lg:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 32px 32px;"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-8">Siap untuk Meningkatkan Efisiensi?</h2>
+<p class="text-on-primary-container text-lg mb-12 max-w-2xl mx-auto">Bergabunglah dengan ribuan tim yang telah mentransformasi cara mereka bekerja dengan Stitch Project.</p>
+<button class="bg-white text-primary px-10 py-4 rounded-md font-bold text-lg hover:bg-surface-container-lowest transition-all duration-300 shadow-xl">
+                            Mulai Sekarang
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 border-t border-slate-200/15">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-lg font-bold text-slate-900 dark:text-white font-headline mb-2">Stitch Project</div>
+<p class="font-inter text-sm text-slate-500 dark:text-slate-400">© 2024 Stitch Project. Hak Cipta Dilindungi.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-sm text-slate-500 hover:text-indigo-500 transition-colors hover:underline decoration-indigo-500 underline-offset-4" href="#">Tentang Kami</a>
+<a class="font-inter text-sm text-slate-500 hover:text-indigo-500 transition-colors hover:underline decoration-indigo-500 underline-offset-4" href="#">Kebijakan Privasi</a>
+<a class="font-inter text-sm text-slate-500 hover:text-indigo-500 transition-colors hover:underline decoration-indigo-500 underline-offset-4" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-inter text-sm text-slate-500 hover:text-indigo-500 transition-colors hover:underline decoration-indigo-500 underline-offset-4" href="#">Hubungi Kami</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors" data-icon="groups">groups</span>
+</div>
+</div>
+</footer>
+</body></html>

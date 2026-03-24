@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vellum | Minimalist Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#adb3b4",
+                        "on-surface": "#2d3435",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#0c0f0f",
+                        "on-tertiary-fixed": "#494a4a",
+                        "on-primary-fixed": "#403f3f",
+                        "error": "#9f403d",
+                        "surface-variant": "#dde4e5",
+                        "primary-container": "#e5e2e1",
+                        "inverse-on-surface": "#9c9d9d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f4f4",
+                        "secondary-container": "#e4e2e2",
+                        "on-error": "#fff7f6",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-container": "#f4f3f3",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-tertiary-fixed-variant": "#656666",
+                        "secondary": "#5f5f5f",
+                        "outline": "#757c7d",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#5b5c5c",
+                        "tertiary-fixed-dim": "#e6e5e5",
+                        "surface-container": "#ebeeef",
+                        "tertiary-fixed": "#f4f3f3",
+                        "secondary-dim": "#535353",
+                        "on-secondary-fixed-variant": "#5b5b5b",
+                        "secondary-fixed-dim": "#d5d4d4",
+                        "inverse-primary": "#ffffff",
+                        "surface-dim": "#d4dbdd",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-highest": "#dde4e5",
+                        "on-secondary": "#faf8f8",
+                        "on-primary": "#faf7f6",
+                        "primary-fixed-dim": "#d7d4d3",
+                        "on-primary-container": "#525151",
+                        "error-dim": "#4e0309",
+                        "tertiary-dim": "#525353",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "primary": "#5f5e5e",
+                        "primary-dim": "#535252",
+                        "on-tertiary": "#faf9f8",
+                        "on-background": "#2d3435",
+                        "on-surface-variant": "#5a6061",
+                        "surface-container-high": "#e4e9ea",
+                        "error-container": "#fe8983",
+                        "on-error-container": "#752121",
+                        "tertiary": "#5e5f5f",
+                        "on-secondary-container": "#515252"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface mb-24 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-6 py-4 max-w-full mx-auto gap-4">
+<div class="flex items-center gap-3 flex-1">
+<span class="text-xl font-extrabold tracking-tighter text-zinc-900 dark:text-zinc-50">Vellum</span>
+<div class="relative flex-1 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary transition-all font-label" placeholder="Search furniture..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-zinc-800 dark:text-zinc-100" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="active:scale-95 duration-200 hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-zinc-800 dark:text-zinc-100" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto space-y-12 pb-12 px-0">
+<!-- Hero Promo Carousel -->
+<section class="px-6 mt-6">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-primary-container">
+<img alt="Limited Edition Furniture" class="w-full h-full object-cover grayscale-[20%] brightness-90" data-alt="Modern minimalist living room with a neutral beige curved sofa, sculptural wooden coffee table, and soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyawBKBCBruGA1aLyNJXGTzldQTJQJMm1ZN3LO7bAsZQe6KtqtxP-9BrqjV0-lnErgcwCzRi8FI5JP2hiiYkCG430RSCTR6fNqV5uNtJzHBbX7ykWnRYIXkjzcQbZ6-GBcAUHUCgMxJIvilFPIeO5DKQ2pUCLmXjvh1dBKuaFe-d0_1FN5zY935ryTvvfF4hvE1WVtq-pN7Ev2r2ks4fepWMYfh8IsKy7MClXWG6XPq1N20os2uk1qw59Uy8cs8JB9ftP-huXmUZyD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-8">
+<span class="text-[10px] uppercase tracking-[0.2em] font-label text-white/80 mb-2">New Collection</span>
+<h2 class="text-2xl font-bold text-white tracking-tight mb-4">The Curator's Choice</h2>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2.5 rounded-full text-xs font-bold w-fit active:scale-95 transition-transform">
+                        Explore Now
+                    </button>
+</div>
+</div>
+<div class="flex justify-center gap-1.5 mt-4">
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+</div>
+</section>
+<!-- Quick Access Icons -->
+<section class="px-6 overflow-x-auto no-scrollbar">
+<div class="flex justify-between items-start gap-4">
+<div class="flex flex-col items-center gap-2 group min-w-[64px]">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-[10px] font-label font-medium uppercase tracking-wider text-on-surface-variant">Top-up</span>
+</div>
+<div class="flex flex-col items-center gap-2 group min-w-[64px]">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<span class="text-[10px] font-label font-medium uppercase tracking-wider text-on-surface-variant">Vouchers</span>
+</div>
+<div class="flex flex-col items-center gap-2 group min-w-[64px]">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="flight">flight</span>
+</div>
+<span class="text-[10px] font-label font-medium uppercase tracking-wider text-on-surface-variant">Travel</span>
+</div>
+<div class="flex flex-col items-center gap-2 group min-w-[64px]">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="receipt">receipt</span>
+</div>
+<span class="text-[10px] font-label font-medium uppercase tracking-wider text-on-surface-variant">Bills</span>
+</div>
+<div class="flex flex-col items-center gap-2 group min-w-[64px]">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="storefront">storefront</span>
+</div>
+<span class="text-[10px] font-label font-medium uppercase tracking-wider text-on-surface-variant">Official</span>
+</div>
+</div>
+</section>
+<!-- Limited Offers (Flash Sale) -->
+<section class="bg-surface-container-low py-10 px-6">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Limited Offers</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Ends in</span>
+<div class="flex gap-1">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded">02</span>
+<span class="text-primary font-bold">:</span>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded">45</span>
+<span class="text-primary font-bold">:</span>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded">12</span>
+</div>
+</div>
+</div>
+<button class="text-xs font-bold text-primary border-b border-outline-variant/30 pb-0.5">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<!-- Product 1 -->
+<div class="min-w-[140px] flex-shrink-0 group">
+<div class="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden relative mb-3">
+<img alt="Modern Chair" class="w-full h-full object-cover" data-alt="Contemporary light gray lounge chair with slim black metal legs against a white wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCssovYO9qwArm0LtOh7_o-x2qQfRbT7rjeQ5Ho1pEl3ri3oLgwvDSGio8uFN8uw5louUdpPF3PWCaFUe2TfB2llv228er45Ocj7SrrWues9bJQ-nhwJ1QwFEH6NMxPa_ZEI9dFHvQMF0xRtGQCH3RzWBCA0-nQva22puuJVgeUf4aTTGsnZ1NXHwEHItBkZwDs6GLa2x7TJ9JlXad2FUBxFWRxVsEiC7qdGVNS_1wj6n52u2EC8qnqk1fLIbvF7D_pv8nB1b815zBv"/>
+<div class="absolute top-2 left-2 bg-error text-on-error text-[8px] font-bold px-2 py-1 rounded-sm uppercase">15% OFF</div>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider truncate">Kardiel Nord</p>
+<p class="text-sm font-bold">$284.00</p>
+<div class="w-full h-1 bg-surface-container rounded-full mt-2">
+<div class="w-4/5 h-full bg-error rounded-full"></div>
+</div>
+<p class="text-[9px] font-label text-on-surface-variant mt-1">8 left in stock</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[140px] flex-shrink-0 group">
+<div class="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden relative mb-3">
+<img alt="Lamp" class="w-full h-full object-cover" data-alt="Minimalist wooden desk lamp with a white ceramic base and clean architectural lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ_9vU6Bbu2vwq4TAhhXJ3Cwh6crLbGE1Clbt_E3hXwqB0aMFGOX4jAXY0u1WB24u4l-R1S00meq6AA8_ryEzjwTFUaPbOcFGhSvCALjWRKX1ymdXKFN1XVqkQcVfH5znYsjhPXqUMzsphWPGKUQ3OG-eM6lFropbuQLB2O3TbMoh0tQwqHdR_56om-kDJZk3FYGFDoPzjNpG3NK6RacMPv6K5gUskohonbg0Y4ZiPol-X0cLhbUj8DkdaEa0B7HDmFnHMjja2oP1O"/>
+<div class="absolute top-2 left-2 bg-error text-on-error text-[8px] font-bold px-2 py-1 rounded-sm uppercase">20% OFF</div>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider truncate">Lume Studio</p>
+<p class="text-sm font-bold">$120.00</p>
+<div class="w-full h-1 bg-surface-container rounded-full mt-2">
+<div class="w-1/3 h-full bg-error rounded-full"></div>
+</div>
+<p class="text-[9px] font-label text-on-surface-variant mt-1">24 left in stock</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[140px] flex-shrink-0 group">
+<div class="aspect-square bg-surface-container-lowest rounded-xl overflow-hidden relative mb-3">
+<img alt="Side Table" class="w-full h-full object-cover" data-alt="Small round white marble side table with brushed brass tripod base in a bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-lFRUaVEZAJCkUtQajn52Bk3CYGbDXwko3AK_jIkFOU93SaZ7Ms6yyyTvC4Y7mVly44l3r1RdnkqO7GSJmVybpM0y4V0ScW9Kr4YQxVkfO3vO_9F5jjZSixtYS0ZRMnSUHSI1iCs9_HIhoIEDo-nGktm-l8hTYlLmCgNdu9BK29XEBND1ZggeBrTs-SuALAVinXhJ1tZLlf-rrebecko28XesyAgSDXEs2-I3YTCcx2_zC1USDStR3GseVwGp0LOKrSzUC6ep_57F"/>
+<div class="absolute top-2 left-2 bg-error text-on-error text-[8px] font-bold px-2 py-1 rounded-sm uppercase">10% OFF</div>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider truncate">Pivot Marble</p>
+<p class="text-sm font-bold">$195.00</p>
+<div class="w-full h-1 bg-surface-container rounded-full mt-2">
+<div class="w-1/2 h-full bg-error rounded-full"></div>
+</div>
+<p class="text-[9px] font-label text-on-surface-variant mt-1">15 left in stock</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Highlight -->
+<section class="px-6">
+<div class="relative w-full h-64 rounded-xl overflow-hidden group">
+<img alt="Brand Highlight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a luxury furniture showroom with concrete floors, floor-to-ceiling windows, and curated modern displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFRSltZ-r9dVitnZPo_7KLpXKF1i4CHIuvGjIXbi4cO6Niw9c6fPLtIc-QBwMgdUHHTg3IfhiuNPxMs40pa2iejqGFRhy6dPfr6HpJn-otnowVi57aVyABSuv5cIdJyVVQVL9Td5iSFXVbaJQwnEpdFllco9j0_mpzUFexaYq6jmS9a_WK3fcR464SxM8c8JY4zAoMhoxFmU_q1nQcTf9uDHd0C9Sr2G4c1cFKr2CiCa5OGD0jVBgbkfEtO6WoF05WAU_OT2MS6Uo"/>
+<div class="absolute inset-0 bg-black/30 backdrop-blur-[2px] p-8 flex flex-col justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-on-surface text-xl font-bold">V</div>
+<div>
+<p class="text-white font-bold leading-tight">The Curator</p>
+<p class="text-white/70 text-[10px] font-label uppercase tracking-widest">Brand of the Day</p>
+</div>
+</div>
+<button class="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white px-8 py-2.5 rounded-full text-xs font-bold transition-all">
+                        Follow
+                    </button>
+</div>
+</div>
+</section>
+<!-- Product Feed -->
+<section class="px-6">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Curated Feed</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-8"><!-- Product Card 1 -->
+<div class="flex flex-col">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden mb-3">
+<img alt="Vase" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1WSf9dmZRHdeahNO9eRUI7WGjeh6BsJ8V8dmMTg_LCYDOETW0aMnPqdRPpeO96quNDYyWX1rg7ibpXLogPORtCYzZf4VtBjlTvkTbtrhcSiUehu5ErSvlktQeQgG_xyCGjpI7bMLNKfVzYu1lqO1iNHh_EEHhLUGulNJLBI_kveAXyJZafArkctw_waBNpaTnNCOla87DxhNOIghQ40YYlzf4OyzI75pfTO3hs4Q5lbr5Qr_zFeGP_1D0vBOAFscn6lw2a3Lg9lc"/>
+</div>
+<div class="space-y-0.5">
+<h4 class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Terra Studio</h4>
+<p class="text-sm font-semibold text-on-surface truncate">Organic Ceramic Set</p>
+<p class="text-sm font-bold text-primary">$142.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden mb-3">
+<img alt="Armchair" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwtRU5pO0pO-xnGMhP3p_8nifEPmhO47sEWGUsy9xE35Fqak8qufGMQtE_92KH6MP8D3qxWFzYDnuJi38TUih9bh1WJA72hQvTPJPopW33sViwetpLZd1ORpU2YQYvBmQYX7NjJ1exJt-0eTPrh4WxM6TQmEYEhGIUhMVkJ3WYvWSNn1jvzyEliiVw1rdxfJl59NACrj2wJgLtQbx-ZT35yUynLDPC2DS9Lqbzh3491idYfwLBKYxWvhEg46uEzi-wbLX2qymQywq"/>
+</div>
+<div class="space-y-0.5">
+<h4 class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Slate Home</h4>
+<p class="text-sm font-semibold text-on-surface truncate">Velvet Accent Chair</p>
+<p class="text-sm font-bold text-primary">$580.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden mb-3">
+<img alt="Mirror" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp1FwzrDCMnNTe6jW2IDS9MKDyBO-dskgDyXljoCwKxmQBzWGRU9_1G3-W85VPx_Enqrc2cHcMttc_KQPZOvti9fAIeV2t0bjltYUs-jClomCx_Y0Xoz43DpGee4hwvPKHjcv3Q3grC0LHo9FDYkWQIXIdlfWVROr2IXWKJ3KcsWlO2lcQqq20jHSpU67YjcBWoFn9CXgmpbPSpoGmxxlSl7eKe-LNLFdy-VXhW1vMp7pv3WHzpx6RsCRaJMlH-bmt_A4XtKkt4o40"/>
+</div>
+<div class="space-y-0.5">
+<h4 class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Frame Works</h4>
+<p class="text-sm font-semibold text-on-surface truncate">Horizon Circle Mirror</p>
+<p class="text-sm font-bold text-primary">$210.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col">
+<div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden mb-3">
+<img alt="Basket" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA02sNe_adIdwUkCst8svmEtRMVtAHzEG91d5V-5klNYOL7QFCYKrm_xriqlpn5gGCCKan3HEwA00Ke7IKq1nz2vba6UbYC7Egzgj6A2-5UYBMPzg3iBoBXpQY6WiJ59P0maaZAwvNVCwmE5gkEtjKhl63QXh_SH-Ys8On8nR_wiqPcQdxtU04jLOjvrlH7ONbM0YTKjDBDuFFWYBVbti7mqH2tM16MefLpj5qXNBE65Gz2Pm4ngjvbwwR9AoNHCnq1JlmLLo_Na2g-"/>
+</div>
+<div class="space-y-0.5">
+<h4 class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Woven Lab</h4>
+<p class="text-sm font-semibold text-on-surface truncate">Seagrass Storage Duo</p>
+<p class="text-sm font-bold text-primary">$85.00</p>
+</div>
+</div></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] border-t border-zinc-100 dark:border-zinc-800">
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-50 font-bold bg-zinc-100 dark:bg-zinc-800 rounded-xl px-3 py-1 active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="rss_feed">rss_feed</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="verified">verified</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Store</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="favorite">favorite</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 active:translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Orders</span>
+</a>
+</nav>
+</body></html>
