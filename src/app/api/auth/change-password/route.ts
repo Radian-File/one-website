@@ -1,7 +1,7 @@
 import { changePasswordSchema } from "@/lib/api-schemas";
 import { hashPassword, verifyPassword } from "@/lib/auth-utils";
 import { prisma } from "@/lib/prisma";
-import { requireSessionUser } from "@/lib/session";
+import { requireUserSession } from "@/lib/session";
 
 type UserRow = {
   id: string;
@@ -45,7 +45,7 @@ async function updatePassword(id: string, passwordHash: string) {
 
 export async function POST(request: Request) {
   try {
-    const sessionUser = await requireSessionUser();
+    const sessionUser = await requireUserSession();
 
     const payload = changePasswordSchema.safeParse(await request.json());
     if (!payload.success) {
@@ -67,6 +67,9 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof Error && error.message === "UNAUTHORIZED") {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    if (error instanceof Error && error.message === "FORBIDDEN_USER") {
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
     return Response.json({ error: "Unable to update password" }, { status: 500 });

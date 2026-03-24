@@ -8,7 +8,7 @@ export default async function AccountPage() {
   const user = await getSessionUser();
 
   if (!user) {
-    redirect("/auth");
+    redirect("/");
   }
 
   return (

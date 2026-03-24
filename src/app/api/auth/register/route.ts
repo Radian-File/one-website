@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { registerSchema } from "@/lib/api-schemas";
 import { hashPassword } from "@/lib/auth-utils";
+import { APP_SESSION_COOKIE } from "@/lib/session";
 
 type UserRow = {
   id: string;
@@ -92,7 +93,7 @@ export async function POST(request: Request) {
   const cookieStore = await cookies();
   const maxAge = payload.data.remember ? 60 * 60 * 24 * 30 : 60 * 60 * 24;
 
-  cookieStore.set("atelier_session", `user-${user.id}`, {
+  cookieStore.set(APP_SESSION_COOKIE, `user-${user.id}`, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

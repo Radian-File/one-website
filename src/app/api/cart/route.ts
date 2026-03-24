@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { CART_COOKIE_KEY } from "@/lib/cart-utils";
 import { addToCartSchema } from "@/lib/api-schemas";
 import { prisma } from "@/lib/prisma";
-import { requireSessionUser } from "@/lib/session";
+import { requireUserSession } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
@@ -49,7 +49,7 @@ async function serializeCart(token: string) {
 
 export async function GET() {
   try {
-    await requireSessionUser();
+    await requireUserSession();
 
     const cookieStore = await cookies();
     const token = cookieStore.get(CART_COOKIE_KEY)?.value;
@@ -64,13 +64,16 @@ export async function GET() {
     if (error instanceof Error && error.message === "UNAUTHORIZED") {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
+    if (error instanceof Error && error.message === "FORBIDDEN_USER") {
+      return Response.json({ error: "Forbidden" }, { status: 403 });
+    }
     return Response.json({ error: "Unable to load cart" }, { status: 500 });
   }
 }
 
 export async function POST(request: Request) {
   try {
-    await requireSessionUser();
+    await requireUserSession();
 
     const payload = addToCartSchema.safeParse(await request.json());
     if (!payload.success) {
@@ -121,6 +124,9 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof Error && error.message === "UNAUTHORIZED") {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    if (error instanceof Error && error.message === "FORBIDDEN_USER") {
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
     return Response.json({ error: "Unable to add item" }, { status: 500 });
   }

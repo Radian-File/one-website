@@ -12,9 +12,9 @@ export function PageTemplate({ children, title, subtitle }: PageTemplateProps) {
   return (
     <div className="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
       <Navbar />
-      <main className="pt-40 pb-24 px-12 flex-1">
+      <main className="pt-40 pb-24 px-12 flex-1 animate-fade-in">
         {(title || subtitle) && (
-          <div className="text-center mb-24">
+          <div className="text-center mb-24 animate-fade-up">
             {subtitle && (
               <p className="font-label text-[10px] uppercase tracking-[0.4rem] text-secondary mb-4">
                 {subtitle}
