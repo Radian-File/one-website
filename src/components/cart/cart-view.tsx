@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { getSafeImageSrc } from "@/lib/image-utils";
 
 interface CartItem {
   id: string;
@@ -99,7 +100,7 @@ export function CartView() {
           <div key={item.id} className="grid grid-cols-[120px_1fr] gap-6 border-b border-outline-variant/30 pb-6">
             <div className="relative h-[150px] w-[120px] bg-surface-container-low">
               <Image
-                src={item.product.image}
+                src={getSafeImageSrc(item.product.image)}
                 alt={item.product.title}
                 fill
                 sizes="120px"

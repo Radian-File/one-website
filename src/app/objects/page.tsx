@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { formatCurrency } from "@/lib/cart-utils";
+import { getSafeImageSrc } from "@/lib/image-utils";
 
 export default async function ObjectsPage() {
   const products = await prisma.product.findMany({
@@ -20,7 +21,7 @@ export default async function ObjectsPage() {
           >
             <div className="aspect-[3/4] overflow-hidden mb-6 relative">
               <Image
-                src={product.image}
+                src={getSafeImageSrc(product.image)}
                 alt={product.title}
                 fill
                 sizes="(min-width: 768px) 22vw, 100vw"

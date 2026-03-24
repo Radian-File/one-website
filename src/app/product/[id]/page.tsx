@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { prisma } from "@/lib/prisma";
 import { formatCurrency } from "@/lib/cart-utils";
+import { getSafeImageSrc } from "@/lib/image-utils";
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -21,7 +22,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="aspect-square relative bg-surface-container-low">
             <Image
-              src={product.image}
+              src={getSafeImageSrc(product.image)}
               alt={product.title}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

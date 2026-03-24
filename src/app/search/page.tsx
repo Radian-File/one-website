@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageTemplate } from "@/components/layout/page-template";
 import { prisma } from "@/lib/prisma";
 import { formatCurrency } from "@/lib/cart-utils";
+import { getSafeImageSrc } from "@/lib/image-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -56,7 +57,7 @@ export default async function SearchPage({
               <Link key={product.id} href={`/product/${product.id}`} className="group cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden mb-6 relative">
                   <Image
-                    src={product.image}
+                    src={getSafeImageSrc(product.image)}
                     alt={product.title}
                     fill
                     sizes="(min-width: 768px) 22vw, 100vw"

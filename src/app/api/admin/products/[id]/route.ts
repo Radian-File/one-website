@@ -15,7 +15,8 @@ export async function PATCH(
 
     const payload = adminProductUpdateSchema.safeParse(await request.json());
     if (!payload.success) {
-      return Response.json({ error: payload.error.flatten() }, { status: 400 });
+      const firstIssue = payload.error.issues[0]?.message ?? "Invalid product payload";
+      return Response.json({ error: firstIssue }, { status: 400 });
     }
 
     const existing = await prisma.product.findUnique({ where: { id } });

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { verifyPassword } from "@/lib/auth-utils";
 import { APP_SESSION_COOKIE } from "@/lib/session";
 
-const ADMIN_EMAIL = "admin@gmail.com";
+const ADMIN_IDENTIFIERS = new Set(["admin@gmail.com", "admin123"]);
 const ADMIN_PASSWORD = "admin123";
 
 type UserRow = {
@@ -71,13 +71,13 @@ export async function POST(request: Request) {
   }
 
   const loginId = payload.data.email.trim();
-  const normalizedEmail = loginId.toLowerCase();
-  const password = payload.data.password;
+  const normalizedLoginId = loginId.toLowerCase();
+  const password = payload.data.password.trim();
 
   const cookieStore = await cookies();
   const maxAge = payload.data.remember ? 60 * 60 * 24 * 30 : 60 * 60 * 24;
 
-  if (normalizedEmail === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+  if (ADMIN_IDENTIFIERS.has(normalizedLoginId) && password === ADMIN_PASSWORD) {
     cookieStore.set(APP_SESSION_COOKIE, "admin-admin", {
       httpOnly: true,
       sameSite: "lax",
@@ -91,13 +91,13 @@ export async function POST(request: Request) {
       role: "admin",
       user: {
         id: "admin",
-        email: ADMIN_EMAIL,
+        email: "admin@gmail.com",
         name: "Administrator",
       },
     });
   }
 
-  const seller = await findSellerByEmail(normalizedEmail);
+  const seller = await findSellerByEmail(normalizedLoginId);
   if (seller && verifyPassword(password, seller.passwordHash)) {
     cookieStore.set(APP_SESSION_COOKIE, `seller-${seller.id}`, {
       httpOnly: true,
@@ -118,7 +118,7 @@ export async function POST(request: Request) {
     });
   }
 
-  const user = await findUserByEmail(normalizedEmail);
+  const user = await findUserByEmail(normalizedLoginId);
   if (user && verifyPassword(password, user.passwordHash)) {
     cookieStore.set(APP_SESSION_COOKIE, `user-${user.id}`, {
       httpOnly: true,

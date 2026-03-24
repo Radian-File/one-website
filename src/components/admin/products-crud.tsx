@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { IMAGE_URL_HELP } from "@/lib/image-utils";
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat("en-US", {
@@ -27,9 +28,21 @@ type FormState = {
   image: string;
 };
 
+const PRODUCT_CATEGORIES = [
+  "Bags",
+  "Eyewear",
+  "Timepieces",
+  "Footwear",
+  "Audio",
+  "Objects",
+  "Apparel",
+  "Accessories",
+  "Home",
+] as const;
+
 const initialForm: FormState = {
   title: "",
-  category: "",
+  category: PRODUCT_CATEGORIES[0],
   price: "",
   description: "",
   image: "",
@@ -183,14 +196,20 @@ export function ProductsCrud() {
           </div>
           <div>
             <label className="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">
-              Category
+              Category Class
             </label>
-            <input
+            <select
               value={form.category}
               onChange={(e) => setForm((prev) => ({ ...prev, category: e.target.value }))}
               className="w-full border border-outline-variant/30 px-4 py-3 bg-surface-container-lowest"
               required
-            />
+            >
+              {PRODUCT_CATEGORIES.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">
@@ -216,6 +235,7 @@ export function ProductsCrud() {
               className="w-full border border-outline-variant/30 px-4 py-3 bg-surface-container-lowest"
               required
             />
+            <p className="text-xs text-secondary mt-2">{IMAGE_URL_HELP}</p>
           </div>
           <div className="md:col-span-2">
             <label className="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">

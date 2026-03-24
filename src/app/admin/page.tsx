@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { ProductsCrud } from "@/components/admin/products-crud";
 import { SellerAccountsManager } from "@/components/admin/seller-accounts-manager";
+import { LogoutButton } from "@/components/auth/logout-button";
 import { getSessionPrincipal } from "@/lib/session";
 
 export default async function AdminPage() {
@@ -27,14 +28,9 @@ export default async function AdminPage() {
           <p className="text-secondary leading-relaxed">
             Register seller accounts and manage all products shown on the Objects page.
           </p>
-          <form action="/api/auth/logout" method="post" className="mt-6">
-            <button
-              type="submit"
-              className="bg-inverse-surface text-background px-6 py-3 text-xs uppercase tracking-[0.2rem]"
-            >
-              Logout Admin
-            </button>
-          </form>
+          <div className="mt-6 max-w-[220px]">
+            <LogoutButton label="Logout Admin" />
+          </div>
         </header>
 
         <SellerAccountsManager />

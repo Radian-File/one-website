@@ -14,7 +14,7 @@ export const newsletterSchema = z.object({
 });
 
 export const loginSchema = z.object({
-  email: z.email().trim(),
+  email: z.string().trim().min(1),
   password: z.string().min(6),
   remember: z.boolean().optional().default(false),
 });
